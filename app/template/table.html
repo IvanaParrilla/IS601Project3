@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block title %}
+Zillow List
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Living Space in sq ft</th>
+        <th scope="col">Number of Bedrooms</th>
+        <th scope="col">Number of Bathrooms</th>
+        <th scope="col">Zipcode</th>
+        <th scope="col">Year Built</th>
+        <th scope="col">List Price</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for house in houses %}
+        <tr>
+            <td>{{house.living_space_sqft}}</td>
+            <td>{{ house.beds }}</td>
+            <td>{{ house.baths }}</td>
+            <td>{{ house.zip }}</td>
+            <td>{{ house.year }}</td>
+            <td>{{ house.list_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
